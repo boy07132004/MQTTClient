@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics; // Stopwatch
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,14 @@ namespace MQTTClient
     public partial class Form1 : Form
     {
         delegate void SetTextCallback(string text);
-
         MqttClient client;
-        Msg Recv = new Msg();
         bool Trigger = false;
         decimal time = 0;
         bool Repeat = false;
         int run;
         string save_location;
+        StringBuilder val = new StringBuilder();
+        Stopwatch watch = new Stopwatch();
         public Form1()
         {
             InitializeComponent();
@@ -46,11 +47,12 @@ namespace MQTTClient
         
         void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            if (Trigger)
-                Recv.val += Encoding.UTF8.GetString(e.Message);
-            else
-                Recv.val = Encoding.UTF8.GetString(e.Message);
-            SetText(Recv.val);
+
+            if (!Trigger)
+                val.Clear();
+            val.Append("\n");        
+            val.Append(Encoding.UTF8.GetString(e.Message));
+            //SetText(val.ToString());
         }
 
         private void btnSubscribe_Click(object sender, EventArgs e)
@@ -99,21 +101,30 @@ namespace MQTTClient
             save_Button.Enabled = false;
             stop_Button.Visible = true;
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        
+        private async void timer1_Tick(object sender, EventArgs e)
         {
             time--;
             if (time == 0)
             {
                 string time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                File.WriteAllText($"{save_location}\\{time_now}.csv", Recv.val);
+                //File.WriteAllText($"{save_location}\\{time_now}.csv", val.ToString());
+                using (var stream = new FileStream(
+                    $"{save_location}\\{time_now}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync:true))
+                {
+                    var bytes = Encoding.UTF8.GetBytes(val.ToString());
+                    await stream.WriteAsync(bytes, 0, bytes.Length);
+                }
+                //watch.Stop();
+                //MessageBox.Show(watch.Elapsed.TotalSeconds.ToString());
                 reset();
             }
         }
         private void reset()
         {
-            Recv.val = "";
+            val.Clear();
             timer1.Stop();
+            
             if (!Repeat) {
                 run--;
 
@@ -133,9 +144,12 @@ namespace MQTTClient
         private void record()
         {
             Trigger = true;
-            Recv.val = "";
+            val.Clear();
+            time = time_Box.Value *10;
             timer1.Start();
-            time = time_Box.Value * 10;
+            //watch.Reset();
+            //watch.Start();
+
         }
 
         private void stop_Button_Click(object sender, EventArgs e)
@@ -144,14 +158,5 @@ namespace MQTTClient
             run = 0;
             reset();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-    }
-    public class Msg
-    {
-        public string val { get; set; }
     }
 }
