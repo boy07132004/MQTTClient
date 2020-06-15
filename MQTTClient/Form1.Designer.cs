@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.RecText = new System.Windows.Forms.TextBox();
             this.topic_textBox = new System.Windows.Forms.TextBox();
             this.btnSubscribe = new System.Windows.Forms.Button();
             this.save_Button = new System.Windows.Forms.Button();
@@ -46,19 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.run_comboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.time_Box = new System.Windows.Forms.NumericUpDown();
             this.stop_Button = new System.Windows.Forms.Button();
+            this.log_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RecText
-            // 
-            this.RecText.Location = new System.Drawing.Point(12, 241);
-            this.RecText.Multiline = true;
-            this.RecText.Name = "RecText";
-            this.RecText.Size = new System.Drawing.Size(473, 130);
-            this.RecText.TabIndex = 0;
             // 
             // topic_textBox
             // 
@@ -222,10 +212,6 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Run";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // time_Box
             // 
             this.time_Box.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -253,12 +239,28 @@
             this.stop_Button.Visible = false;
             this.stop_Button.Click += new System.EventHandler(this.stop_Button_Click);
             // 
+            // log_textBox
+            // 
+            this.log_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.log_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.log_textBox.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.log_textBox.Location = new System.Drawing.Point(17, 182);
+            this.log_textBox.MinimumSize = new System.Drawing.Size(400, 180);
+            this.log_textBox.Multiline = true;
+            this.log_textBox.Name = "log_textBox";
+            this.log_textBox.ReadOnly = true;
+            this.log_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.log_textBox.Size = new System.Drawing.Size(441, 181);
+            this.log_textBox.TabIndex = 20;
+            this.log_textBox.WordWrap = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(605, 383);
+            this.Controls.Add(this.log_textBox);
             this.Controls.Add(this.stop_Button);
             this.Controls.Add(this.time_Box);
             this.Controls.Add(this.label4);
@@ -277,7 +279,6 @@
             this.Controls.Add(this.save_Button);
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.topic_textBox);
-            this.Controls.Add(this.RecText);
             this.Name = "Form1";
             this.Text = "MQTT Client Example";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -289,8 +290,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox RecText;
         private System.Windows.Forms.TextBox topic_textBox;
         private System.Windows.Forms.Button btnSubscribe;
         private System.Windows.Forms.Button save_Button;
@@ -307,9 +306,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox run_comboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown time_Box;
         private System.Windows.Forms.Button stop_Button;
+        private System.Windows.Forms.TextBox log_textBox;
     }
 }
 
