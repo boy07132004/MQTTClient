@@ -20,18 +20,19 @@ namespace MQTTClient
     public partial class Form1 : Form
     {
         delegate void SetTextCallback(string text);
-        MqttClient client;
-        bool Trigger = false;
-        decimal time = 0;
-        bool Repeat = false;
         int run;
+        decimal time = 0;
+        string time_now = "";
+        MqttClient client;
+        bool Repeat = false;
+        bool Trigger = false;
         string save_location;
-        StringBuilder val = new StringBuilder();
         Stopwatch watch = new Stopwatch();
+        StringBuilder val = new StringBuilder();
+
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,12 +48,10 @@ namespace MQTTClient
         
         void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-
             if (!Trigger)
                 val.Clear();
             val.Append("\n");        
             val.Append(Encoding.UTF8.GetString(e.Message));
-            //SetText(val.ToString());
         }
 
         private void btnSubscribe_Click(object sender, EventArgs e)
@@ -62,34 +61,16 @@ namespace MQTTClient
                 string Topic = topic_textBox.Text;
                 // subscribe to the topic with QoS 0 ( 0, 1, 2 )
                 client.Subscribe(new string[] { Topic }, new byte[] { 2 });   // we need arrays as parameters because we can subscribe to different topics with one call
-                SetText("");
+                time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                log_textBox.Text += $"Subscribe start @{time_now}\r\n";
             }
             else
                 MessageBox.Show("Subscribe topic is required.");
         }
 
-
-        private void SetText(String text)
-        {
-            // we need this construction because the receiving code in the library and the UI with textbox run on different threads
-            if (this.RecText.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(SetText);
-                this.Invoke(d, new object[] { text });
-            }
-            else
-                this.RecText.Text = text;
-        }
-
         private void save_ButtonClick(object sender, EventArgs e)
         {
             Repeat = !int.TryParse(run_comboBox.Text, out run);
-            /*
-            if (Repeat)
-                MessageBox.Show("Repeat");
-            else
-                MessageBox.Show(run.ToString());
-            */
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.InitialDirectory = "C:\\Users";
             dialog.IsFolderPicker = true;
@@ -97,34 +78,19 @@ namespace MQTTClient
             {
                 save_location = dialog.FileName;
             }
+            time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            log_textBox.Text += $"Record start @{time_now}\r\n";
             record();
             save_Button.Enabled = false;
             stop_Button.Visible = true;
+            
         }
-        
-        private async void timer1_Tick(object sender, EventArgs e)
-        {
-            time--;
-            if (time == 0)
-            {
-                string time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                //File.WriteAllText($"{save_location}\\{time_now}.csv", val.ToString());
-                using (var stream = new FileStream(
-                    $"{save_location}\\{time_now}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync:true))
-                {
-                    var bytes = Encoding.UTF8.GetBytes(val.ToString());
-                    await stream.WriteAsync(bytes, 0, bytes.Length);
-                }
-                //watch.Stop();
-                //MessageBox.Show(watch.Elapsed.TotalSeconds.ToString());
-                reset();
-            }
-        }
+
         private void reset()
         {
             val.Clear();
-            timer1.Stop();
-            
+            //watch.Stop();
+            //MessageBox.Show(watch.Elapsed.TotalSeconds.ToString());
             if (!Repeat) {
                 run--;
 
@@ -133,29 +99,47 @@ namespace MQTTClient
                     Trigger = false;
                     save_Button.Enabled = true;
                     stop_Button.Visible = false;
-                    timer1.Dispose();
+
+                    time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                    log_textBox.Text += $"Record end @{time_now}\r\n";
+                    return;
                 }
                 else
                     record();
+                time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                log_textBox.Text += $"Record left {run} times @{time_now}\r\n";
             }
             else
+            {
+                time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                log_textBox.Text += $"Continuous record @{time_now}\r\n";
                 record();
+            }
         }
-        private void record()
+        private async void record()
         {
             Trigger = true;
             val.Clear();
-            time = time_Box.Value *10;
-            timer1.Start();
+            time = time_Box.Value *1000;
+            string record_time = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             //watch.Reset();
             //watch.Start();
-
+            await Task.Delay(Convert.ToInt32(time));
+            using (var stream = new FileStream(
+                $"{save_location}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync:true))
+                {
+                    var bytes = Encoding.UTF8.GetBytes(val.ToString());
+                    await stream.WriteAsync(bytes, 0, bytes.Length);
+                }
+            reset();
         }
 
         private void stop_Button_Click(object sender, EventArgs e)
         {
             Repeat = false;
             run = 0;
+            time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+            log_textBox.Text += $"Force stop @{time_now}\r\n";
             reset();
         }
     }
