@@ -47,6 +47,7 @@
             this.time_Box = new System.Windows.Forms.NumericUpDown();
             this.stop_Button = new System.Windows.Forms.Button();
             this.log_textBox = new System.Windows.Forms.TextBox();
+            this.exit_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).BeginInit();
             this.SuspendLayout();
             // 
@@ -254,6 +255,18 @@
             this.log_textBox.TabIndex = 20;
             this.log_textBox.WordWrap = false;
             // 
+            // exit_Button
+            // 
+            this.exit_Button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_Button.Location = new System.Drawing.Point(509, 339);
+            this.exit_Button.Name = "exit_Button";
+            this.exit_Button.Size = new System.Drawing.Size(85, 45);
+            this.exit_Button.TabIndex = 4;
+            this.exit_Button.Text = "Exit";
+            this.exit_Button.UseVisualStyleBackColor = true;
+            this.exit_Button.Visible = false;
+            this.exit_Button.Click += new System.EventHandler(this.exit_ButtonClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -276,6 +289,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.broker_textBox);
+            this.Controls.Add(this.exit_Button);
             this.Controls.Add(this.save_Button);
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.topic_textBox);
@@ -309,6 +323,7 @@
         private System.Windows.Forms.NumericUpDown time_Box;
         private System.Windows.Forms.Button stop_Button;
         private System.Windows.Forms.TextBox log_textBox;
+        private System.Windows.Forms.Button exit_Button;
     }
 }
 

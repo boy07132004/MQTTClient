@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
 using System.Diagnostics; // Stopwatch
-using System.Drawing;
-using System.Linq;
+//using System.Drawing;
+//using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,9 +37,11 @@ namespace MQTTClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
             client = new MqttClient(broker_textBox.Text);
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
             client.Connect(clientid_textBox.Text, user_textBox.Text, password_textBox.Text);
+            */
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -56,6 +58,9 @@ namespace MQTTClient
 
         private void btnSubscribe_Click(object sender, EventArgs e)
         {
+            client = new MqttClient(broker_textBox.Text);
+            client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
+            client.Connect(clientid_textBox.Text, user_textBox.Text, password_textBox.Text);
             if (topic_textBox.Text != "")
             {
                 string Topic = topic_textBox.Text;
@@ -141,6 +146,12 @@ namespace MQTTClient
             time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             log_textBox.Text += $"Force stop @{time_now}\r\n";
             reset();
+        }
+
+        private void exit_ButtonClick(object sender, EventArgs e)
+        {
+            client.Disconnect();
+            Application.Exit();
         }
     }
 }
