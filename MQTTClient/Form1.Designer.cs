@@ -47,7 +47,8 @@
             this.time_Box = new System.Windows.Forms.NumericUpDown();
             this.stop_Button = new System.Windows.Forms.Button();
             this.log_textBox = new System.Windows.Forms.TextBox();
-            this.exit_Button = new System.Windows.Forms.Button();
+            this.path_Label = new System.Windows.Forms.Label();
+            this.folder_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // save_Button
             // 
             this.save_Button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_Button.Location = new System.Drawing.Point(509, 152);
+            this.save_Button.Location = new System.Drawing.Point(509, 136);
             this.save_Button.Name = "save_Button";
             this.save_Button.Size = new System.Drawing.Size(85, 45);
             this.save_Button.TabIndex = 4;
@@ -89,7 +90,7 @@
             this.broker_textBox.Name = "broker_textBox";
             this.broker_textBox.Size = new System.Drawing.Size(122, 29);
             this.broker_textBox.TabIndex = 5;
-            this.broker_textBox.Text = "192.168.0.161";
+            this.broker_textBox.Text = "192.168.0.100";
             // 
             // label1
             // 
@@ -251,28 +252,39 @@
             this.log_textBox.Name = "log_textBox";
             this.log_textBox.ReadOnly = true;
             this.log_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.log_textBox.Size = new System.Drawing.Size(441, 181);
+            this.log_textBox.Size = new System.Drawing.Size(439, 180);
             this.log_textBox.TabIndex = 20;
             this.log_textBox.WordWrap = false;
             // 
-            // exit_Button
+            // path_Label
             // 
-            this.exit_Button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit_Button.Location = new System.Drawing.Point(509, 339);
-            this.exit_Button.Name = "exit_Button";
-            this.exit_Button.Size = new System.Drawing.Size(85, 45);
-            this.exit_Button.TabIndex = 4;
-            this.exit_Button.Text = "Exit";
-            this.exit_Button.UseVisualStyleBackColor = true;
-            this.exit_Button.Visible = false;
-            this.exit_Button.Click += new System.EventHandler(this.exit_ButtonClick);
+            this.path_Label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.path_Label.Location = new System.Drawing.Point(380, 366);
+            this.path_Label.MaximumSize = new System.Drawing.Size(180, 20);
+            this.path_Label.Name = "path_Label";
+            this.path_Label.Size = new System.Drawing.Size(180, 20);
+            this.path_Label.TabIndex = 21;
+            this.path_Label.Text = "C:\\\\Users";
+            // 
+            // folder_Button
+            // 
+            this.folder_Button.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.folder_Button.Location = new System.Drawing.Point(566, 362);
+            this.folder_Button.Name = "folder_Button";
+            this.folder_Button.Size = new System.Drawing.Size(28, 29);
+            this.folder_Button.TabIndex = 22;
+            this.folder_Button.Text = "...";
+            this.folder_Button.UseVisualStyleBackColor = true;
+            this.folder_Button.Click += new System.EventHandler(this.folder_Button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(605, 383);
+            this.ClientSize = new System.Drawing.Size(598, 392);
+            this.Controls.Add(this.folder_Button);
+            this.Controls.Add(this.path_Label);
             this.Controls.Add(this.log_textBox);
             this.Controls.Add(this.stop_Button);
             this.Controls.Add(this.time_Box);
@@ -289,7 +301,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.broker_textBox);
-            this.Controls.Add(this.exit_Button);
             this.Controls.Add(this.save_Button);
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.topic_textBox);
@@ -323,7 +334,8 @@
         private System.Windows.Forms.NumericUpDown time_Box;
         private System.Windows.Forms.Button stop_Button;
         private System.Windows.Forms.TextBox log_textBox;
-        private System.Windows.Forms.Button exit_Button;
+        private System.Windows.Forms.Label path_Label;
+        private System.Windows.Forms.Button folder_Button;
     }
 }
 
