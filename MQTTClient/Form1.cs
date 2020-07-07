@@ -39,9 +39,17 @@ namespace MQTTClient
         {
             
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private async void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try { client.Disconnect(); }
+            try {
+                client.Disconnect();
+                using (var stream = new FileStream(
+                    $"{save_location}\\log_{time_now}.txt", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
+                {
+                    var bytes = Encoding.UTF8.GetBytes(log_textBox.Text);
+                    await stream.WriteAsync(bytes, 0, bytes.Length);
+                }
+            }
             catch { }
         }
         
@@ -127,12 +135,16 @@ namespace MQTTClient
             //watch.Reset();
             //watch.Start();
             await Task.Delay(Convert.ToInt32(time));
-            using (var stream = new FileStream(
-                $"{save_location}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync:true))
+            if (val.Length < 1) { log_textBox.Text += $"No values.\r\n"; }
+            else
+            {
+                using (var stream = new FileStream(
+                    $"{save_location}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
                 {
                     var bytes = Encoding.UTF8.GetBytes(val.ToString());
                     await stream.WriteAsync(bytes, 0, bytes.Length);
                 }
+            }
             reset();
         }
 
