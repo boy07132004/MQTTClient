@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MQTTClient.exe" size="19392">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MQTTClient.exe" size="19904">
       <assemblyIdentity name="MQTTClient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NiFRqqbYn5nI60hbFuCwCwdqL3zOff25LZc3SJjyoBM=</dsig:DigestValue>
+        <dsig:DigestValue>iZ0YQqsArVmv46iJsvHMyOurWwjNOmS3TbsMLzx2c6w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

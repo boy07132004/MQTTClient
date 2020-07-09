@@ -49,24 +49,26 @@
             this.log_textBox = new System.Windows.Forms.TextBox();
             this.path_Label = new System.Windows.Forms.Label();
             this.folder_Button = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).BeginInit();
             this.SuspendLayout();
             // 
             // topic_textBox
             // 
             this.topic_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.topic_textBox.Location = new System.Drawing.Point(85, 90);
+            this.topic_textBox.Location = new System.Drawing.Point(69, 76);
             this.topic_textBox.Name = "topic_textBox";
-            this.topic_textBox.Size = new System.Drawing.Size(400, 29);
+            this.topic_textBox.Size = new System.Drawing.Size(339, 29);
             this.topic_textBox.TabIndex = 1;
             this.topic_textBox.Text = "rand";
             // 
             // btnSubscribe
             // 
             this.btnSubscribe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubscribe.Location = new System.Drawing.Point(509, 44);
+            this.btnSubscribe.Location = new System.Drawing.Point(4, 111);
             this.btnSubscribe.Name = "btnSubscribe";
-            this.btnSubscribe.Size = new System.Drawing.Size(85, 45);
+            this.btnSubscribe.Size = new System.Drawing.Size(404, 36);
             this.btnSubscribe.TabIndex = 3;
             this.btnSubscribe.Text = "Subscribe";
             this.btnSubscribe.UseVisualStyleBackColor = true;
@@ -75,9 +77,9 @@
             // save_Button
             // 
             this.save_Button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_Button.Location = new System.Drawing.Point(509, 136);
+            this.save_Button.Location = new System.Drawing.Point(4, 226);
             this.save_Button.Name = "save_Button";
-            this.save_Button.Size = new System.Drawing.Size(85, 45);
+            this.save_Button.Size = new System.Drawing.Size(404, 36);
             this.save_Button.TabIndex = 4;
             this.save_Button.Text = "Save!";
             this.save_Button.UseVisualStyleBackColor = true;
@@ -86,7 +88,7 @@
             // broker_textBox
             // 
             this.broker_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.broker_textBox.Location = new System.Drawing.Point(85, 18);
+            this.broker_textBox.Location = new System.Drawing.Point(69, 6);
             this.broker_textBox.Name = "broker_textBox";
             this.broker_textBox.Size = new System.Drawing.Size(122, 29);
             this.broker_textBox.TabIndex = 5;
@@ -96,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 94);
+            this.label1.Location = new System.Drawing.Point(4, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 6;
@@ -106,7 +108,7 @@
             // 
             this.label_broker.AutoSize = true;
             this.label_broker.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_broker.Location = new System.Drawing.Point(12, 21);
+            this.label_broker.Location = new System.Drawing.Point(4, 9);
             this.label_broker.Name = "label_broker";
             this.label_broker.Size = new System.Drawing.Size(59, 20);
             this.label_broker.TabIndex = 8;
@@ -116,7 +118,7 @@
             // 
             this.label_user.AutoSize = true;
             this.label_user.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_user.Location = new System.Drawing.Point(12, 56);
+            this.label_user.Location = new System.Drawing.Point(4, 44);
             this.label_user.Name = "label_user";
             this.label_user.Size = new System.Drawing.Size(43, 20);
             this.label_user.TabIndex = 9;
@@ -125,7 +127,7 @@
             // user_textBox
             // 
             this.user_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.user_textBox.Location = new System.Drawing.Point(85, 53);
+            this.user_textBox.Location = new System.Drawing.Point(69, 41);
             this.user_textBox.Name = "user_textBox";
             this.user_textBox.Size = new System.Drawing.Size(122, 29);
             this.user_textBox.TabIndex = 10;
@@ -135,7 +137,7 @@
             // 
             this.label_pswd.AutoSize = true;
             this.label_pswd.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_pswd.Location = new System.Drawing.Point(224, 60);
+            this.label_pswd.Location = new System.Drawing.Point(206, 44);
             this.label_pswd.Name = "label_pswd";
             this.label_pswd.Size = new System.Drawing.Size(80, 20);
             this.label_pswd.TabIndex = 11;
@@ -144,7 +146,7 @@
             // password_textBox
             // 
             this.password_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.password_textBox.Location = new System.Drawing.Point(305, 53);
+            this.password_textBox.Location = new System.Drawing.Point(286, 41);
             this.password_textBox.Name = "password_textBox";
             this.password_textBox.PasswordChar = '*';
             this.password_textBox.Size = new System.Drawing.Size(122, 29);
@@ -155,7 +157,7 @@
             // 
             this.label_client.AutoSize = true;
             this.label_client.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_client.Location = new System.Drawing.Point(224, 23);
+            this.label_client.Location = new System.Drawing.Point(206, 9);
             this.label_client.Name = "label_client";
             this.label_client.Size = new System.Drawing.Size(74, 20);
             this.label_client.TabIndex = 13;
@@ -164,7 +166,7 @@
             // clientid_textBox
             // 
             this.clientid_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.clientid_textBox.Location = new System.Drawing.Point(305, 17);
+            this.clientid_textBox.Location = new System.Drawing.Point(286, 6);
             this.clientid_textBox.Name = "clientid_textBox";
             this.clientid_textBox.Size = new System.Drawing.Size(122, 29);
             this.clientid_textBox.TabIndex = 14;
@@ -173,21 +175,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 141);
+            this.label2.Location = new System.Drawing.Point(4, 159);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.Size = new System.Drawing.Size(25, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Time";
+            this.label2.Text = "每";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(132, 141);
+            this.label3.Location = new System.Drawing.Point(89, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 20);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "s";
+            this.label3.Text = "秒儲存一次";
             // 
             // run_comboBox
             // 
@@ -198,7 +200,7 @@
             "5",
             "10",
             "N"});
-            this.run_comboBox.Location = new System.Drawing.Point(205, 136);
+            this.run_comboBox.Location = new System.Drawing.Point(262, 156);
             this.run_comboBox.Name = "run_comboBox";
             this.run_comboBox.Size = new System.Drawing.Size(41, 28);
             this.run_comboBox.TabIndex = 15;
@@ -208,16 +210,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(164, 141);
+            this.label4.Location = new System.Drawing.Point(199, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 20);
+            this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Run";
+            this.label4.Text = "共儲存";
             // 
             // time_Box
             // 
             this.time_Box.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.time_Box.Location = new System.Drawing.Point(85, 136);
+            this.time_Box.Location = new System.Drawing.Point(35, 157);
             this.time_Box.Name = "time_Box";
             this.time_Box.Size = new System.Drawing.Size(48, 29);
             this.time_Box.TabIndex = 17;
@@ -232,9 +234,9 @@
             this.stop_Button.BackColor = System.Drawing.Color.Red;
             this.stop_Button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stop_Button.ForeColor = System.Drawing.Color.Black;
-            this.stop_Button.Location = new System.Drawing.Point(509, 212);
+            this.stop_Button.Location = new System.Drawing.Point(4, 226);
             this.stop_Button.Name = "stop_Button";
-            this.stop_Button.Size = new System.Drawing.Size(85, 45);
+            this.stop_Button.Size = new System.Drawing.Size(404, 36);
             this.stop_Button.TabIndex = 18;
             this.stop_Button.Text = "Stop!";
             this.stop_Button.UseVisualStyleBackColor = false;
@@ -246,30 +248,31 @@
             this.log_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.log_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.log_textBox.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.log_textBox.Location = new System.Drawing.Point(17, 182);
+            this.log_textBox.Location = new System.Drawing.Point(4, 268);
             this.log_textBox.MinimumSize = new System.Drawing.Size(400, 180);
             this.log_textBox.Multiline = true;
             this.log_textBox.Name = "log_textBox";
             this.log_textBox.ReadOnly = true;
             this.log_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.log_textBox.Size = new System.Drawing.Size(439, 180);
+            this.log_textBox.Size = new System.Drawing.Size(404, 180);
             this.log_textBox.TabIndex = 20;
             this.log_textBox.WordWrap = false;
             // 
             // path_Label
             // 
             this.path_Label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.path_Label.Location = new System.Drawing.Point(380, 366);
-            this.path_Label.MaximumSize = new System.Drawing.Size(180, 20);
+            this.path_Label.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.path_Label.Location = new System.Drawing.Point(67, 196);
+            this.path_Label.MaximumSize = new System.Drawing.Size(300, 20);
             this.path_Label.Name = "path_Label";
-            this.path_Label.Size = new System.Drawing.Size(180, 20);
+            this.path_Label.Size = new System.Drawing.Size(300, 20);
             this.path_Label.TabIndex = 21;
             this.path_Label.Text = "C:\\\\Users";
             // 
             // folder_Button
             // 
             this.folder_Button.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.folder_Button.Location = new System.Drawing.Point(566, 362);
+            this.folder_Button.Location = new System.Drawing.Point(380, 193);
             this.folder_Button.Name = "folder_Button";
             this.folder_Button.Size = new System.Drawing.Size(28, 29);
             this.folder_Button.TabIndex = 22;
@@ -277,17 +280,38 @@
             this.folder_Button.UseVisualStyleBackColor = true;
             this.folder_Button.Click += new System.EventHandler(this.folder_Button_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(309, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 20);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "次";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 196);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "儲存於";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(598, 392);
+            this.ClientSize = new System.Drawing.Size(414, 454);
             this.Controls.Add(this.folder_Button);
             this.Controls.Add(this.path_Label);
             this.Controls.Add(this.log_textBox);
             this.Controls.Add(this.stop_Button);
             this.Controls.Add(this.time_Box);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.run_comboBox);
             this.Controls.Add(this.clientid_textBox);
@@ -298,6 +322,7 @@
             this.Controls.Add(this.label_user);
             this.Controls.Add(this.label_broker);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.broker_textBox);
@@ -336,6 +361,8 @@
         private System.Windows.Forms.TextBox log_textBox;
         private System.Windows.Forms.Label path_Label;
         private System.Windows.Forms.Button folder_Button;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

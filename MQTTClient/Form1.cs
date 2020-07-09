@@ -2,7 +2,6 @@
 //using System.Collections.Generic;
 //using System.ComponentModel;
 //using System.Data;
-using System.Diagnostics; // Stopwatch
 //using System.Drawing;
 //using System.Linq;
 using System.Text;
@@ -25,9 +24,7 @@ namespace MQTTClient
         string time_now = "";
         MqttClient client;
         bool Repeat = false;
-        bool Trigger = false;
-        string save_location;
-        Stopwatch watch = new Stopwatch();
+        bool Trigger = false;       
         StringBuilder val = new StringBuilder();
 
         public Form1()
@@ -44,7 +41,7 @@ namespace MQTTClient
             try {
                 client.Disconnect();
                 using (var stream = new FileStream(
-                    $"{save_location}\\log_{time_now}.txt", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
+                    $"{path_Label.Text}\\log_{time_now}.txt", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
                 {
                     var bytes = Encoding.UTF8.GetBytes(log_textBox.Text);
                     await stream.WriteAsync(bytes, 0, bytes.Length);
@@ -74,7 +71,7 @@ namespace MQTTClient
                     // subscribe to the topic with QoS 0 ( 0, 1, 2 )
                     client.Subscribe(new string[] { Topic }, new byte[] { 2 });   // we need arrays as parameters because we can subscribe to different topics with one call
                     time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                    log_textBox.Text += $"Subscribe start @{time_now}\r\n";
+                    log_textBox.AppendText( $"Subscribe start @{time_now}\r\n");
                 }
                 else
                     MessageBox.Show("Subscribe topic is required.");
@@ -87,11 +84,10 @@ namespace MQTTClient
         private void save_ButtonClick(object sender, EventArgs e)
         {
             Repeat = !int.TryParse(run_comboBox.Text, out run);
-            save_location = path_Label.Text;
             time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-            log_textBox.Text += $"Record start @{time_now}\r\n";
+            log_textBox.AppendText( $"Record start @{time_now}\r\n");
             record();
-            save_Button.Enabled = false;
+            save_Button.Visible = false;
             stop_Button.Visible = true;
             
         }
@@ -99,30 +95,31 @@ namespace MQTTClient
         private void reset()
         {
             val.Clear();
-            //watch.Stop();
-            //MessageBox.Show(watch.Elapsed.TotalSeconds.ToString());
             if (!Repeat) {
                 run--;
 
                 if (run <= 0)
                 {
                     Trigger = false;
-                    save_Button.Enabled = true;
+                    save_Button.Visible = true;
                     stop_Button.Visible = false;
-
-                    time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                    log_textBox.Text += $"Record end @{time_now}\r\n";
-                    return;
+                    if (run == 0)
+                    {
+                        time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                        log_textBox.AppendText($"Record end @{time_now}\r\n");
+                    }
                 }
                 else
+                {
                     record();
-                time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                log_textBox.Text += $"Record left {run} times @{time_now}\r\n";
+                    time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                    log_textBox.AppendText($"Record left {run} times @{time_now}\r\n");
+                }
             }
             else
             {
                 time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                log_textBox.Text += $"Continuous record @{time_now}\r\n";
+                log_textBox.AppendText( $"Continuous record @{time_now}\r\n");
                 record();
             }
         }
@@ -135,11 +132,12 @@ namespace MQTTClient
             //watch.Reset();
             //watch.Start();
             await Task.Delay(Convert.ToInt32(time));
-            if (val.Length < 1) { log_textBox.Text += $"No values.\r\n"; }
+            if (val.Length < 1)
+                log_textBox.AppendText( $"No values.\r\n");
             else
             {
                 using (var stream = new FileStream(
-                    $"{save_location}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
+                    $"{path_Label.Text}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
                 {
                     var bytes = Encoding.UTF8.GetBytes(val.ToString());
                     await stream.WriteAsync(bytes, 0, bytes.Length);
@@ -151,9 +149,9 @@ namespace MQTTClient
         private void stop_Button_Click(object sender, EventArgs e)
         {
             Repeat = false;
-            run = 0;
+            run = -1;
             time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-            log_textBox.Text += $"Force stop @{time_now}\r\n";
+            log_textBox.AppendText( $"Force stop @{time_now}\r\n");
             reset();
         }
 
@@ -170,9 +168,8 @@ namespace MQTTClient
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                save_location = dialog.FileName;
+                path_Label.Text = dialog.FileName;
             }
-            path_Label.Text = save_location;
         }
     }
 }
