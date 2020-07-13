@@ -185,7 +185,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(89, 159);
+            this.label3.Location = new System.Drawing.Point(117, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 6;
@@ -200,7 +200,7 @@
             "5",
             "10",
             "N"});
-            this.run_comboBox.Location = new System.Drawing.Point(262, 156);
+            this.run_comboBox.Location = new System.Drawing.Point(292, 156);
             this.run_comboBox.Name = "run_comboBox";
             this.run_comboBox.Size = new System.Drawing.Size(41, 28);
             this.run_comboBox.TabIndex = 15;
@@ -210,7 +210,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(199, 159);
+            this.label4.Location = new System.Drawing.Point(229, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 16;
@@ -226,7 +226,7 @@
             0,
             0});
             this.time_Box.Name = "time_Box";
-            this.time_Box.Size = new System.Drawing.Size(48, 29);
+            this.time_Box.Size = new System.Drawing.Size(76, 29);
             this.time_Box.TabIndex = 17;
             this.time_Box.Value = new decimal(new int[] {
             5,
@@ -289,7 +289,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(309, 159);
+            this.label5.Location = new System.Drawing.Point(339, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 20);
             this.label5.TabIndex = 16;
@@ -335,7 +335,7 @@
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.topic_textBox);
             this.Name = "Form1";
-            this.Text = "MQTT Client Example";
+            this.Text = "MQTT Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).EndInit();
