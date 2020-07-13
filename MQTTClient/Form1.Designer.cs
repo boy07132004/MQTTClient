@@ -220,6 +220,11 @@
             // 
             this.time_Box.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.time_Box.Location = new System.Drawing.Point(35, 157);
+            this.time_Box.Maximum = new decimal(new int[] {
+            6000,
+            0,
+            0,
+            0});
             this.time_Box.Name = "time_Box";
             this.time_Box.Size = new System.Drawing.Size(48, 29);
             this.time_Box.TabIndex = 17;
