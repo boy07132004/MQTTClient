@@ -27,7 +27,6 @@ C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\MQTTClient.exe
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\MQTTClient.pdb
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\M2Mqtt.Net.dll
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\M2Mqtt.Net.pdb
-C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.csprojResolveAssemblyReference.cache
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.Properties.Resources.resources
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.csproj.GenerateResource.Cache
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.Form1.resources
@@ -44,3 +43,6 @@ C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\Microsoft.Wind
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.csprojAssemblyReference.cache
+C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.csproj.CoreCompileInputs.cache
+C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Debug\MQTTClient.csproj.CopyComplete
