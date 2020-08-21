@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.topic_textBox = new System.Windows.Forms.TextBox();
             this.save_Button = new System.Windows.Forms.Button();
             this.broker_textBox = new System.Windows.Forms.TextBox();
@@ -67,10 +68,47 @@
             this.time_Box_2 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.group3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.topic_textBox_3 = new System.Windows.Forms.TextBox();
+            this.folder_Button_3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.path_Label_3 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.log_textBox_3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.stop_Button_3 = new System.Windows.Forms.Button();
+            this.run_comboBox_3 = new System.Windows.Forms.ComboBox();
+            this.save_Button_3 = new System.Windows.Forms.Button();
+            this.time_Box_3 = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.group4 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.topic_textBox_4 = new System.Windows.Forms.TextBox();
+            this.folder_Button_4 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.path_Label_4 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.log_textBox_4 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.stop_Button_4 = new System.Windows.Forms.Button();
+            this.run_comboBox_4 = new System.Windows.Forms.ComboBox();
+            this.save_Button_4 = new System.Windows.Forms.Button();
+            this.time_Box_4 = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.admin_button = new System.Windows.Forms.Button();
+            this.admin_textBox = new System.Windows.Forms.TextBox();
+            this.adminpw_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).BeginInit();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box_2)).BeginInit();
+            this.group3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.time_Box_3)).BeginInit();
+            this.group4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.time_Box_4)).BeginInit();
             this.SuspendLayout();
             // 
             // topic_textBox
@@ -363,7 +401,7 @@
             this.group2.Controls.Add(this.label12);
             this.group2.Controls.Add(this.label13);
             this.group2.Enabled = false;
-            this.group2.Location = new System.Drawing.Point(330, 83);
+            this.group2.Location = new System.Drawing.Point(309, 83);
             this.group2.Name = "group2";
             this.group2.Size = new System.Drawing.Size(295, 341);
             this.group2.TabIndex = 24;
@@ -534,23 +572,440 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "次";
             // 
+            // group3
+            // 
+            this.group3.Controls.Add(this.label9);
+            this.group3.Controls.Add(this.topic_textBox_3);
+            this.group3.Controls.Add(this.folder_Button_3);
+            this.group3.Controls.Add(this.label14);
+            this.group3.Controls.Add(this.path_Label_3);
+            this.group3.Controls.Add(this.label16);
+            this.group3.Controls.Add(this.log_textBox_3);
+            this.group3.Controls.Add(this.label17);
+            this.group3.Controls.Add(this.stop_Button_3);
+            this.group3.Controls.Add(this.run_comboBox_3);
+            this.group3.Controls.Add(this.save_Button_3);
+            this.group3.Controls.Add(this.time_Box_3);
+            this.group3.Controls.Add(this.label18);
+            this.group3.Controls.Add(this.label19);
+            this.group3.Enabled = false;
+            this.group3.Location = new System.Drawing.Point(610, 83);
+            this.group3.Name = "group3";
+            this.group3.Size = new System.Drawing.Size(295, 341);
+            this.group3.TabIndex = 24;
+            this.group3.TabStop = false;
+            this.group3.Text = "C";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14F);
+            this.label9.Location = new System.Drawing.Point(7, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 23);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Topic";
+            // 
+            // topic_textBox_3
+            // 
+            this.topic_textBox_3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topic_textBox_3.Location = new System.Drawing.Point(60, 18);
+            this.topic_textBox_3.Name = "topic_textBox_3";
+            this.topic_textBox_3.Size = new System.Drawing.Size(227, 27);
+            this.topic_textBox_3.TabIndex = 1;
+            this.topic_textBox_3.Text = "rand3";
+            // 
+            // folder_Button_3
+            // 
+            this.folder_Button_3.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.folder_Button_3.Location = new System.Drawing.Point(259, 86);
+            this.folder_Button_3.Name = "folder_Button_3";
+            this.folder_Button_3.Size = new System.Drawing.Size(28, 29);
+            this.folder_Button_3.TabIndex = 22;
+            this.folder_Button_3.Text = "...";
+            this.folder_Button_3.UseVisualStyleBackColor = true;
+            this.folder_Button_3.Click += new System.EventHandler(this.folder_Button_3_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label14.Location = new System.Drawing.Point(120, 54);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 21);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "秒/次";
+            // 
+            // path_Label_3
+            // 
+            this.path_Label_3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.path_Label_3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.path_Label_3.Location = new System.Drawing.Point(57, 89);
+            this.path_Label_3.MaximumSize = new System.Drawing.Size(300, 20);
+            this.path_Label_3.Name = "path_Label_3";
+            this.path_Label_3.Size = new System.Drawing.Size(201, 20);
+            this.path_Label_3.TabIndex = 21;
+            this.path_Label_3.Text = "C:\\\\Users";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label16.Location = new System.Drawing.Point(7, 54);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(26, 21);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "每";
+            // 
+            // log_textBox_3
+            // 
+            this.log_textBox_3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.log_textBox_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.log_textBox_3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.log_textBox_3.Location = new System.Drawing.Point(7, 153);
+            this.log_textBox_3.MinimumSize = new System.Drawing.Size(280, 180);
+            this.log_textBox_3.Multiline = true;
+            this.log_textBox_3.Name = "log_textBox_3";
+            this.log_textBox_3.ReadOnly = true;
+            this.log_textBox_3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.log_textBox_3.Size = new System.Drawing.Size(280, 186);
+            this.log_textBox_3.TabIndex = 20;
+            this.log_textBox_3.WordWrap = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 14F);
+            this.label17.Location = new System.Drawing.Point(7, 87);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(45, 23);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Path";
+            // 
+            // stop_Button_3
+            // 
+            this.stop_Button_3.BackColor = System.Drawing.Color.Red;
+            this.stop_Button_3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stop_Button_3.ForeColor = System.Drawing.Color.Black;
+            this.stop_Button_3.Location = new System.Drawing.Point(3, 117);
+            this.stop_Button_3.Name = "stop_Button_3";
+            this.stop_Button_3.Size = new System.Drawing.Size(284, 30);
+            this.stop_Button_3.TabIndex = 18;
+            this.stop_Button_3.Text = "Stop!";
+            this.stop_Button_3.UseVisualStyleBackColor = false;
+            this.stop_Button_3.Visible = false;
+            this.stop_Button_3.Click += new System.EventHandler(this.stop_Button_3_Click);
+            // 
+            // run_comboBox_3
+            // 
+            this.run_comboBox_3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.run_comboBox_3.FormattingEnabled = true;
+            this.run_comboBox_3.Items.AddRange(new object[] {
+            "1",
+            "5",
+            "10",
+            "N"});
+            this.run_comboBox_3.Location = new System.Drawing.Point(202, 51);
+            this.run_comboBox_3.Name = "run_comboBox_3";
+            this.run_comboBox_3.Size = new System.Drawing.Size(41, 28);
+            this.run_comboBox_3.TabIndex = 15;
+            this.run_comboBox_3.Text = "N";
+            // 
+            // save_Button_3
+            // 
+            this.save_Button_3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_Button_3.Location = new System.Drawing.Point(3, 117);
+            this.save_Button_3.Name = "save_Button_3";
+            this.save_Button_3.Size = new System.Drawing.Size(284, 30);
+            this.save_Button_3.TabIndex = 4;
+            this.save_Button_3.Text = "Start record";
+            this.save_Button_3.UseVisualStyleBackColor = true;
+            this.save_Button_3.Click += new System.EventHandler(this.save_Button_3_Click);
+            // 
+            // time_Box_3
+            // 
+            this.time_Box_3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.time_Box_3.Location = new System.Drawing.Point(38, 50);
+            this.time_Box_3.Maximum = new decimal(new int[] {
+            6000,
+            0,
+            0,
+            0});
+            this.time_Box_3.Name = "time_Box_3";
+            this.time_Box_3.Size = new System.Drawing.Size(76, 29);
+            this.time_Box_3.TabIndex = 17;
+            this.time_Box_3.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label18.Location = new System.Drawing.Point(174, 54);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(26, 21);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "共";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label19.Location = new System.Drawing.Point(247, 54);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(26, 21);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "次";
+            // 
+            // group4
+            // 
+            this.group4.Controls.Add(this.label20);
+            this.group4.Controls.Add(this.topic_textBox_4);
+            this.group4.Controls.Add(this.folder_Button_4);
+            this.group4.Controls.Add(this.label21);
+            this.group4.Controls.Add(this.path_Label_4);
+            this.group4.Controls.Add(this.label23);
+            this.group4.Controls.Add(this.log_textBox_4);
+            this.group4.Controls.Add(this.label24);
+            this.group4.Controls.Add(this.stop_Button_4);
+            this.group4.Controls.Add(this.run_comboBox_4);
+            this.group4.Controls.Add(this.save_Button_4);
+            this.group4.Controls.Add(this.time_Box_4);
+            this.group4.Controls.Add(this.label25);
+            this.group4.Controls.Add(this.label26);
+            this.group4.Enabled = false;
+            this.group4.Location = new System.Drawing.Point(911, 83);
+            this.group4.Name = "group4";
+            this.group4.Size = new System.Drawing.Size(295, 341);
+            this.group4.TabIndex = 24;
+            this.group4.TabStop = false;
+            this.group4.Text = "D";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 14F);
+            this.label20.Location = new System.Drawing.Point(7, 20);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 23);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Topic";
+            // 
+            // topic_textBox_4
+            // 
+            this.topic_textBox_4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topic_textBox_4.Location = new System.Drawing.Point(60, 18);
+            this.topic_textBox_4.Name = "topic_textBox_4";
+            this.topic_textBox_4.Size = new System.Drawing.Size(227, 27);
+            this.topic_textBox_4.TabIndex = 1;
+            this.topic_textBox_4.Text = "rand4";
+            // 
+            // folder_Button_4
+            // 
+            this.folder_Button_4.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.folder_Button_4.Location = new System.Drawing.Point(259, 86);
+            this.folder_Button_4.Name = "folder_Button_4";
+            this.folder_Button_4.Size = new System.Drawing.Size(28, 29);
+            this.folder_Button_4.TabIndex = 22;
+            this.folder_Button_4.Text = "...";
+            this.folder_Button_4.UseVisualStyleBackColor = true;
+            this.folder_Button_4.Click += new System.EventHandler(this.folder_Button_4_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label21.Location = new System.Drawing.Point(120, 54);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 21);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "秒/次";
+            // 
+            // path_Label_4
+            // 
+            this.path_Label_4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.path_Label_4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.path_Label_4.Location = new System.Drawing.Point(57, 89);
+            this.path_Label_4.MaximumSize = new System.Drawing.Size(300, 20);
+            this.path_Label_4.Name = "path_Label_4";
+            this.path_Label_4.Size = new System.Drawing.Size(201, 20);
+            this.path_Label_4.TabIndex = 21;
+            this.path_Label_4.Text = "C:\\\\Users";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label23.Location = new System.Drawing.Point(7, 54);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(26, 21);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "每";
+            // 
+            // log_textBox_4
+            // 
+            this.log_textBox_4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.log_textBox_4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.log_textBox_4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.log_textBox_4.Location = new System.Drawing.Point(7, 153);
+            this.log_textBox_4.MinimumSize = new System.Drawing.Size(280, 180);
+            this.log_textBox_4.Multiline = true;
+            this.log_textBox_4.Name = "log_textBox_4";
+            this.log_textBox_4.ReadOnly = true;
+            this.log_textBox_4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.log_textBox_4.Size = new System.Drawing.Size(280, 186);
+            this.log_textBox_4.TabIndex = 20;
+            this.log_textBox_4.WordWrap = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Calibri", 14F);
+            this.label24.Location = new System.Drawing.Point(7, 87);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(45, 23);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Path";
+            // 
+            // stop_Button_4
+            // 
+            this.stop_Button_4.BackColor = System.Drawing.Color.Red;
+            this.stop_Button_4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stop_Button_4.ForeColor = System.Drawing.Color.Black;
+            this.stop_Button_4.Location = new System.Drawing.Point(3, 117);
+            this.stop_Button_4.Name = "stop_Button_4";
+            this.stop_Button_4.Size = new System.Drawing.Size(284, 30);
+            this.stop_Button_4.TabIndex = 18;
+            this.stop_Button_4.Text = "Stop!";
+            this.stop_Button_4.UseVisualStyleBackColor = false;
+            this.stop_Button_4.Visible = false;
+            this.stop_Button_4.Click += new System.EventHandler(this.stop_Button_4_Click);
+            // 
+            // run_comboBox_4
+            // 
+            this.run_comboBox_4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.run_comboBox_4.FormattingEnabled = true;
+            this.run_comboBox_4.Items.AddRange(new object[] {
+            "1",
+            "5",
+            "10",
+            "N"});
+            this.run_comboBox_4.Location = new System.Drawing.Point(202, 51);
+            this.run_comboBox_4.Name = "run_comboBox_4";
+            this.run_comboBox_4.Size = new System.Drawing.Size(41, 28);
+            this.run_comboBox_4.TabIndex = 15;
+            this.run_comboBox_4.Text = "N";
+            // 
+            // save_Button_4
+            // 
+            this.save_Button_4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_Button_4.Location = new System.Drawing.Point(3, 117);
+            this.save_Button_4.Name = "save_Button_4";
+            this.save_Button_4.Size = new System.Drawing.Size(284, 30);
+            this.save_Button_4.TabIndex = 4;
+            this.save_Button_4.Text = "Start record";
+            this.save_Button_4.UseVisualStyleBackColor = true;
+            this.save_Button_4.Click += new System.EventHandler(this.save_Button_4_Click);
+            // 
+            // time_Box_4
+            // 
+            this.time_Box_4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.time_Box_4.Location = new System.Drawing.Point(38, 50);
+            this.time_Box_4.Maximum = new decimal(new int[] {
+            6000,
+            0,
+            0,
+            0});
+            this.time_Box_4.Name = "time_Box_4";
+            this.time_Box_4.Size = new System.Drawing.Size(76, 29);
+            this.time_Box_4.TabIndex = 17;
+            this.time_Box_4.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label25.Location = new System.Drawing.Point(174, 54);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(26, 21);
+            this.label25.TabIndex = 16;
+            this.label25.Text = "共";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label26.Location = new System.Drawing.Point(247, 54);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(26, 21);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "次";
+            // 
+            // admin_button
+            // 
+            this.admin_button.BackColor = System.Drawing.Color.Transparent;
+            this.admin_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("admin_button.BackgroundImage")));
+            this.admin_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.admin_button.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            this.admin_button.FlatAppearance.BorderSize = 0;
+            this.admin_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.admin_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.admin_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.admin_button.Location = new System.Drawing.Point(1136, 10);
+            this.admin_button.Name = "admin_button";
+            this.admin_button.Size = new System.Drawing.Size(70, 71);
+            this.admin_button.TabIndex = 26;
+            this.admin_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.admin_button.UseVisualStyleBackColor = false;
+            this.admin_button.Click += new System.EventHandler(this.admin_button_Click);
+            // 
+            // admin_textBox
+            // 
+            this.admin_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.admin_textBox.Location = new System.Drawing.Point(1008, 13);
+            this.admin_textBox.Name = "admin_textBox";
+            this.admin_textBox.Size = new System.Drawing.Size(122, 29);
+            this.admin_textBox.TabIndex = 10;
+            // 
+            // adminpw_textBox
+            // 
+            this.adminpw_textBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.adminpw_textBox.Location = new System.Drawing.Point(1008, 48);
+            this.adminpw_textBox.Name = "adminpw_textBox";
+            this.adminpw_textBox.PasswordChar = '*';
+            this.adminpw_textBox.Size = new System.Drawing.Size(122, 29);
+            this.adminpw_textBox.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(817, 435);
+            this.ClientSize = new System.Drawing.Size(1207, 433);
+            this.Controls.Add(this.admin_button);
+            this.Controls.Add(this.group4);
+            this.Controls.Add(this.group3);
             this.Controls.Add(this.group2);
             this.Controls.Add(this.group1);
             this.Controls.Add(this.Connect);
             this.Controls.Add(this.clientid_textBox);
             this.Controls.Add(this.label_client);
+            this.Controls.Add(this.adminpw_textBox);
             this.Controls.Add(this.password_textBox);
             this.Controls.Add(this.label_pswd);
+            this.Controls.Add(this.admin_textBox);
             this.Controls.Add(this.user_textBox);
             this.Controls.Add(this.label_user);
             this.Controls.Add(this.label_broker);
             this.Controls.Add(this.broker_textBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "MQTT Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -560,6 +1015,12 @@
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.time_Box_2)).EndInit();
+            this.group3.ResumeLayout(false);
+            this.group3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.time_Box_3)).EndInit();
+            this.group4.ResumeLayout(false);
+            this.group4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.time_Box_4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,6 +1066,39 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button stop_Button_2;
+        private System.Windows.Forms.GroupBox group3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox topic_textBox_3;
+        private System.Windows.Forms.Button folder_Button_3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label path_Label_3;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox log_textBox_3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button stop_Button_3;
+        private System.Windows.Forms.ComboBox run_comboBox_3;
+        private System.Windows.Forms.Button save_Button_3;
+        private System.Windows.Forms.NumericUpDown time_Box_3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.GroupBox group4;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox topic_textBox_4;
+        private System.Windows.Forms.Button folder_Button_4;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label path_Label_4;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox log_textBox_4;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button stop_Button_4;
+        private System.Windows.Forms.ComboBox run_comboBox_4;
+        private System.Windows.Forms.Button save_Button_4;
+        private System.Windows.Forms.NumericUpDown time_Box_4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button admin_button;
+        private System.Windows.Forms.TextBox admin_textBox;
+        private System.Windows.Forms.TextBox adminpw_textBox;
     }
 }
 

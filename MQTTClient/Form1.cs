@@ -24,6 +24,8 @@ namespace MQTTClient
         StringBuilder val = new StringBuilder();
         Topic topic1;
         Topic topic2;
+        Topic topic3;
+        Topic topic4;
 
         public Form1()
         {
@@ -41,7 +43,17 @@ namespace MQTTClient
                 save_Button_2.Visible = !save_Button_2.Visible;
                 stop_Button_2.Visible = !save_Button_2.Visible;
             }
-            
+            else if (group == 3)
+            {
+                save_Button_3.Visible = !save_Button_3.Visible;
+                stop_Button_3.Visible = !save_Button_3.Visible;
+            }
+            else if (group == 4)
+            {
+                save_Button_4.Visible = !save_Button_4.Visible;
+                stop_Button_4.Visible = !save_Button_4.Visible;
+            }
+
         }
         public void Log_Text(short group,string str)
         {
@@ -50,6 +62,10 @@ namespace MQTTClient
                 log_textBox.AppendText($"{str} @{time_now}\r\n");
             else if(group==2)
                 log_textBox_2.AppendText($"{str} @{time_now}\r\n");
+            else if (group == 3)
+                log_textBox_3.AppendText($"{str} @{time_now}\r\n");
+            else if (group == 4)
+                log_textBox_4.AppendText($"{str} @{time_now}\r\n");
         }
 
         private void Save_Button_Func(Topic topic_)
@@ -85,48 +101,91 @@ namespace MQTTClient
             }
         }
 
-     // Group A
-            
-            private void save_Button_Click(object sender, EventArgs e)
-            {
-                topic1 = new Topic(client, topic_textBox.Text, time_Box.Value, run_comboBox.Text, path_Label.Text, 1, this);
-                Save_Button_Func(topic1);
-            }
+     // Group A           
+        private void save_Button_Click(object sender, EventArgs e)
+        {
+            topic1 = new Topic(client, topic_textBox.Text, time_Box.Value, run_comboBox.Text, path_Label.Text, 1, this);
+            Save_Button_Func(topic1);
+        }
     
-            private void stop_Button_Click(object sender, EventArgs e)
-            {
-                Stop_Button_Func(topic1);
-            }
+        private void stop_Button_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic1);
+        }
 
-            private void folder_Button_Click(object sender, EventArgs e)
-            {
-                CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-                dialog.InitialDirectory = path_Label.Text;//*****
-                dialog.IsFolderPicker = true;
-                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-                    path_Label.Text = dialog.FileName;   //*****
-            }
+        private void folder_Button_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label.Text = dialog.FileName;   //*****
+        }
+
     //  Group B
+        private void save_Button_2_Click(object sender, EventArgs e)
+        {
+            topic2 = new Topic(client, topic_textBox_2.Text, time_Box_2.Value, run_comboBox_2.Text, path_Label_2.Text, 2, this);
+            Save_Button_Func(topic2);
+        }
 
-            private void save_Button_2_Click(object sender, EventArgs e)
-            {
-                topic2 = new Topic(client, topic_textBox_2.Text, time_Box_2.Value, run_comboBox_2.Text, path_Label_2.Text, 2, this);
-                Save_Button_Func(topic2);
-            }
+        private void stop_Button_2_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic2);
+        }
 
-            private void stop_Button_2_Click(object sender, EventArgs e)
-            {
-                Stop_Button_Func(topic2);
-            }
+        private void folder_Button_2_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_2.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_2.Text = dialog.FileName;   //*****
+        }
 
-            private void folder_Button_2_Click(object sender, EventArgs e)
-            {
-                CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-                dialog.InitialDirectory = path_Label_2.Text;//*****
-                dialog.IsFolderPicker = true;
-                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-                    path_Label_2.Text = dialog.FileName;   //*****
-            }
+    //  Group C
+        private void save_Button_3_Click(object sender, EventArgs e)
+        {
+            topic3 = new Topic(client, topic_textBox_3.Text, time_Box_3.Value, run_comboBox_3.Text, path_Label_3.Text, 3, this);
+            Save_Button_Func(topic3);
+        }
+
+        private void stop_Button_3_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic3);
+        }
+
+        private void folder_Button_3_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_3.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_3.Text = dialog.FileName;   //*****
+        }
+
+    //  Group D
+        private void save_Button_4_Click(object sender, EventArgs e)
+        {
+            topic4 = new Topic(client, topic_textBox_4.Text, time_Box_4.Value, run_comboBox_4.Text, path_Label_4.Text, 4, this);
+            Save_Button_Func(topic4);
+        }
+
+        private void stop_Button_4_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic4);
+        }      
+
+        private void folder_Button_4_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_4.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_4.Text = dialog.FileName;   //*****
+        }
+
+
 
         private void exit_ButtonClick(object sender, EventArgs e)
         {
@@ -138,8 +197,14 @@ namespace MQTTClient
         private void connect_Click(object sender, EventArgs e)
         {
             client = new MqttClient(broker_textBox.Text);
-            client.Connect(clientid_textBox.Text, user_textBox.Text, password_textBox.Text);
-
+            try
+            {
+                client.Connect(clientid_textBox.Text, user_textBox.Text, password_textBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Connect error");
+            }
             broker_textBox.Enabled = false;
             clientid_textBox.Enabled = false;
             user_textBox.Enabled = false;
@@ -148,8 +213,21 @@ namespace MQTTClient
 
             group1.Enabled = true;
             group2.Enabled = true;
+            group3.Enabled = true;
+            group4.Enabled = true;
         }
 
-        
+        private string admin_user = "ml6a01";
+        private string admin_pw = "ml6a01";
+        private void admin_button_Click(object sender, EventArgs e)
+        {
+            if (admin_textBox.Text == admin_user && adminpw_textBox.Text == admin_pw)
+            {
+                GroupBox[] group_all = { group1, group2, group3, group4 };
+                foreach (var group in group_all)
+                    group.Enabled = !group.Enabled;
+            }
+                
+        }
     }
 }
