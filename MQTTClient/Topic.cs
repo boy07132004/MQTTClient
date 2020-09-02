@@ -99,6 +99,7 @@ namespace MQTTClient
                 {
                     var bytes = Encoding.UTF8.GetBytes(val.ToString());
                     val = null;
+                    val = new StringBuilder();
                     await stream.WriteAsync(bytes, 0, bytes.Length);
                 }
             }
