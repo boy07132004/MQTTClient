@@ -98,7 +98,7 @@ namespace MQTTClient
                     $"{path}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
                 {
                     var bytes = Encoding.UTF8.GetBytes(val.ToString());
-                    val.Clear();
+                    val = null;
                     await stream.WriteAsync(bytes, 0, bytes.Length);
                 }
             }

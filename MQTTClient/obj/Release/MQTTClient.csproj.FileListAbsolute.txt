@@ -21,6 +21,6 @@ C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.e
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.application
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.exe
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.pdb
-C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.csprojAssemblyReference.cache
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.csproj.CoreCompileInputs.cache
 C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.csproj.CopyComplete
+C:\Users\ML6AH1\Documents\ZM_Work\MQTTClient\MQTTClient\obj\Release\MQTTClient.csprojAssemblyReference.cache
