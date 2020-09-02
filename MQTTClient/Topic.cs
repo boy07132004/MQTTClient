@@ -21,6 +21,7 @@ namespace MQTTClient
         private readonly Form1 form;
         public bool Repeat = false;
         public short group;
+        object token = new object();
 
         public Topic(MqttClient client, string topic,decimal time,string run,string path,short group,Form1 form)
         {
@@ -32,12 +33,20 @@ namespace MQTTClient
             this.form = form;
             this.group = group;
         }
-
+        public void Addstring(String s)
+        {
+            lock (token)
+            {
+                val.Append("\n");
+                val.Append(s);
+            }
+        }
         public void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             if (e.Topic != topic) return;
-            val.Append("\n");
-            val.Append(Encoding.UTF8.GetString(e.Message));
+            Addstring(Encoding.UTF8.GetString(e.Message));
+            //val.Append("\n");
+            //val.Append(Encoding.UTF8.GetString(e.Message));
         }
         public void Subscribe()
         {
