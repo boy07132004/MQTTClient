@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.topic_textBox = new System.Windows.Forms.TextBox();
             this.save_Button = new System.Windows.Forms.Button();
@@ -101,6 +102,7 @@
             this.admin_button = new System.Windows.Forms.Button();
             this.admin_textBox = new System.Windows.Forms.TextBox();
             this.adminpw_textBox = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.time_Box)).BeginInit();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -983,6 +985,12 @@
             this.adminpw_textBox.Size = new System.Drawing.Size(122, 29);
             this.adminpw_textBox.TabIndex = 12;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1099,6 +1107,7 @@
         private System.Windows.Forms.Button admin_button;
         private System.Windows.Forms.TextBox admin_textBox;
         private System.Windows.Forms.TextBox adminpw_textBox;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

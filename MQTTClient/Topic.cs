@@ -7,6 +7,7 @@ using System.IO;
 
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using System.Windows.Forms;
 
 namespace MQTTClient
 {
@@ -17,11 +18,11 @@ namespace MQTTClient
         protected decimal time;
         public int run;
         public string path;
-        private StringBuilder val = new StringBuilder();
+        //private StringBuilder val = new StringBuilder("\n");
+        string val = "";
         private readonly Form1 form;
         public bool Repeat = false;
         public short group;
-        object token = new object();
 
         public Topic(MqttClient client, string topic,decimal time,string run,string path,short group,Form1 form)
         {
@@ -33,18 +34,25 @@ namespace MQTTClient
             this.form = form;
             this.group = group;
         }
-        public void Addstring(String s)
+        /*
+        private void Addstring(String s)
         {
-            lock (token)
+            try
             {
                 val.Append("\n");
                 val.Append(s);
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }*/
         public void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             if (e.Topic != topic) return;
-            Addstring(Encoding.UTF8.GetString(e.Message));
+            val += "\n";
+            val += Encoding.UTF8.GetString(e.Message);
+            //Addstring(Encoding.UTF8.GetString(e.Message));
             //val.Append("\n");
             //val.Append(Encoding.UTF8.GetString(e.Message));
         }
@@ -65,7 +73,7 @@ namespace MQTTClient
         public void Save()
         {
             form.Log_Text(group,"Record start ");
-            val.Clear();
+            val = "";
             record();
             form.Button_Visible(group);
         }
@@ -99,6 +107,7 @@ namespace MQTTClient
             string record_time = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             await Task.Delay(Convert.ToInt32(time));
             if (run == -100) return;
+            /*
             if (val.Length < 1)
                 form.Log_Text(group,"No values.");
             else
@@ -108,8 +117,19 @@ namespace MQTTClient
                 {
                     var bytes = Encoding.UTF8.GetBytes(val.ToString());
                     val = null;
-                    val = new StringBuilder();
+                    val = new StringBuilder("\n");
                     await stream.WriteAsync(bytes, 0, bytes.Length);
+                }
+            }*/
+            if (val == "") form.Log_Text(group, "No values.");
+            else
+            {
+                using (var stream = new FileStream(
+                    $"{path}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
+                {
+                    var bytes = Encoding.UTF8.GetBytes(val);
+                    await stream.WriteAsync(bytes, 0, bytes.Length);
+                    val = "";
                 }
             }
             reset();

@@ -21,7 +21,6 @@ namespace MQTTClient
     {
         delegate void SetTextCallback(string text);
         MqttClient client;
-        StringBuilder val = new StringBuilder();
         Topic topic1;
         Topic topic2;
         Topic topic3;
@@ -228,6 +227,12 @@ namespace MQTTClient
                     group.Enabled = !group.Enabled;
             }
                 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            GC.Collect();
+            Console.WriteLine("GCCCCCC");
         }
     }
 }
