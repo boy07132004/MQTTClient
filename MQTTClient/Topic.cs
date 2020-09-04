@@ -34,27 +34,11 @@ namespace MQTTClient
             this.form = form;
             this.group = group;
         }
-        /*
-        private void Addstring(String s)
-        {
-            try
-            {
-                val.Append("\n");
-                val.Append(s);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }*/
         public void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             if (e.Topic != topic) return;
             val += "\n";
             val += Encoding.UTF8.GetString(e.Message);
-            //Addstring(Encoding.UTF8.GetString(e.Message));
-            //val.Append("\n");
-            //val.Append(Encoding.UTF8.GetString(e.Message));
         }
         public void Subscribe()
         {

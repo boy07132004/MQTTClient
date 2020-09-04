@@ -25,6 +25,10 @@ namespace MQTTClient
         Topic topic2;
         Topic topic3;
         Topic topic4;
+        Topic topic5;
+        Topic topic6;
+        Topic topic7;
+        Topic topic8;
 
         public Form1()
         {
@@ -52,6 +56,26 @@ namespace MQTTClient
                 save_Button_4.Visible = !save_Button_4.Visible;
                 stop_Button_4.Visible = !save_Button_4.Visible;
             }
+            else if (group == 5)
+            {
+                save_Button_5.Visible = !save_Button_5.Visible;
+                stop_Button_5.Visible = !save_Button_5.Visible;
+            }
+            else if (group == 6)
+            {
+                save_Button_6.Visible = !save_Button_6.Visible;
+                stop_Button_6.Visible = !save_Button_6.Visible;
+            }
+            else if (group == 7)
+            {
+                save_Button_7.Visible = !save_Button_7.Visible;
+                stop_Button_7.Visible = !save_Button_7.Visible;
+            }
+            else if (group == 8)
+            {
+                save_Button_8.Visible = !save_Button_8.Visible;
+                stop_Button_8.Visible = !save_Button_8.Visible;
+            }
 
         }
         public void Log_Text(short group,string str)
@@ -59,12 +83,20 @@ namespace MQTTClient
             string time_now = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             if(group==1)
                 log_textBox.AppendText($"{str} @{time_now}\r\n");
-            else if(group==2)
+            else if (group == 2)
                 log_textBox_2.AppendText($"{str} @{time_now}\r\n");
             else if (group == 3)
                 log_textBox_3.AppendText($"{str} @{time_now}\r\n");
             else if (group == 4)
                 log_textBox_4.AppendText($"{str} @{time_now}\r\n");
+            else if (group == 5)
+                log_textBox_5.AppendText($"{str} @{time_now}\r\n");
+            else if (group == 6)
+                log_textBox_6.AppendText($"{str} @{time_now}\r\n");
+            else if (group == 7)
+                log_textBox_7.AppendText($"{str} @{time_now}\r\n");
+            else if (group == 8)
+                log_textBox_8.AppendText($"{str} @{time_now}\r\n");
         }
 
         private void Save_Button_Func(Topic topic_)
@@ -82,25 +114,7 @@ namespace MQTTClient
             topic_.Unsubscribe();
         }
 
-
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            try {
-                client.Disconnect();
-                /*using (var stream = new FileStream(
-                    $"{path_Label.Text}\\log_{time_now}.txt", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
-                {
-                    var bytes = Encoding.UTF8.GetBytes(log_textBox.Text);
-                    await stream.WriteAsync(bytes, 0, bytes.Length);
-                }*/
-            }
-            catch {
-                //MessageBox.Show("Disconnect error.");
-            }
-        }
-
-     // Group A           
+        // Group A           
         private void save_Button_Click(object sender, EventArgs e)
         {
             topic1 = new Topic(client, topic_textBox.Text, time_Box.Value, run_comboBox.Text, path_Label.Text, 1, this);
@@ -183,12 +197,90 @@ namespace MQTTClient
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
                 path_Label_4.Text = dialog.FileName;   //*****
         }
+        //  Group E
+        private void save_Button_5_Click(object sender, EventArgs e)
+        {
+            topic5 = new Topic(client, topic_textBox_5.Text, time_Box_5.Value, run_comboBox_5.Text, path_Label_5.Text, 5, this);
+            Save_Button_Func(topic5);
+        }
 
+        private void stop_Button_5_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic5);
+        }
 
+        private void folder_Button_5_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_5.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_5.Text = dialog.FileName;   //*****
+        }
+        //  Group F
+        private void save_Button_6_Click(object sender, EventArgs e)
+        {
+            topic6 = new Topic(client, topic_textBox_6.Text, time_Box_6.Value, run_comboBox_6.Text, path_Label_6.Text, 6, this);
+            Save_Button_Func(topic6);
+        }
+
+        private void stop_Button_6_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic6);
+        }
+
+        private void folder_Button_6_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_6.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_6.Text = dialog.FileName;   //*****
+        }
+        //  Group G
+        private void save_Button_7_Click(object sender, EventArgs e)
+        {
+            topic7 = new Topic(client, topic_textBox_7.Text, time_Box_7.Value, run_comboBox_7.Text, path_Label_7.Text, 7, this);
+            Save_Button_Func(topic7);
+        }
+
+        private void stop_Button_7_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic7);
+        }
+
+        private void folder_Button_7_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_7.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_7.Text = dialog.FileName;   //*****
+        }
+        //  Group H
+        private void save_Button_8_Click(object sender, EventArgs e)
+        {
+            topic8 = new Topic(client, topic_textBox_8.Text, time_Box_8.Value, run_comboBox_8.Text, path_Label_8.Text, 8, this);
+            Save_Button_Func(topic8);
+        }
+
+        private void stop_Button_8_Click(object sender, EventArgs e)
+        {
+            Stop_Button_Func(topic8);
+        }
+
+        private void folder_Button_8_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = path_Label_8.Text;//*****
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                path_Label_8.Text = dialog.FileName;   //*****
+        }
 
         private void exit_ButtonClick(object sender, EventArgs e)
         {
-            client.Disconnect();
+            try { client.Disconnect(); } catch { }
             Application.Exit();
         }
 
@@ -210,10 +302,9 @@ namespace MQTTClient
             password_textBox.Enabled = false;
             Connect.Enabled = false;
 
-            group1.Enabled = true;
-            group2.Enabled = true;
-            group3.Enabled = true;
-            group4.Enabled = true;
+            GroupBox[] group_all = { group1, group2, group3, group4, group5, group6, group7, group8 };
+            foreach (var group in group_all)
+                group.Enabled = true;
         }
 
         private string admin_user = "ml6a01";
@@ -222,7 +313,7 @@ namespace MQTTClient
         {
             if (admin_textBox.Text == admin_user && adminpw_textBox.Text == admin_pw)
             {
-                GroupBox[] group_all = { group1, group2, group3, group4 };
+                GroupBox[] group_all = { group1, group2, group3, group4, group5, group6, group7, group8 };
                 foreach (var group in group_all)
                     group.Enabled = !group.Enabled;
             }
@@ -233,6 +324,11 @@ namespace MQTTClient
         {
             GC.Collect();
             Console.WriteLine("GCCCCCC");
+        }
+
+        private void exit_ButtonClick(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }
