@@ -281,7 +281,12 @@ namespace MQTTClient
         private void exit_ButtonClick(object sender, EventArgs e)
         {
             try { client.Disconnect(); } catch { }
+            //this.Close();
+            //Environment.Exit(Environment.ExitCode);
+            //InitializeComponent();
             Application.Exit();
+            Environment.Exit(Environment.ExitCode);
+            InitializeComponent();
         }
 
        
@@ -326,9 +331,6 @@ namespace MQTTClient
             Console.WriteLine("GCCCCCC");
         }
 
-        private void exit_ButtonClick(object sender, FormClosingEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -208,7 +208,7 @@
             this.broker_textBox.Name = "broker_textBox";
             this.broker_textBox.Size = new System.Drawing.Size(122, 29);
             this.broker_textBox.TabIndex = 5;
-            this.broker_textBox.Text = "192.168.3.102";
+            this.broker_textBox.Text = "192.168.0.100";
             // 
             // label1
             // 
