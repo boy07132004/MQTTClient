@@ -18,9 +18,9 @@ namespace MQTTClient
         protected decimal time;
         public int run;
         public string path;
-        //private StringBuilder val = new StringBuilder("\n");
-        string val = "";
-        private readonly Form1 form;
+        private StringBuilder val = new StringBuilder("\n");
+        //private readonly Form1 form;
+        private  Form1 form;
         public bool Repeat = false;
         public short group;
 
@@ -37,8 +37,8 @@ namespace MQTTClient
         public void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             if (e.Topic != topic) return;
-            val += "\n";
-            val += Encoding.UTF8.GetString(e.Message);
+            val.Append("\n");
+            val.Append(Encoding.UTF8.GetString(e.Message));
         }
         public void Subscribe()
         {
@@ -57,7 +57,7 @@ namespace MQTTClient
         public void Save()
         {
             form.Log_Text(group,"Record start ");
-            val = "";
+            val.Clear();
             record();
             form.Button_Visible(group);
         }
@@ -105,15 +105,15 @@ namespace MQTTClient
                     await stream.WriteAsync(bytes, 0, bytes.Length);
                 }
             }*/
-            if (val == "") form.Log_Text(group, "No values.");
+            if (val.Length < 1) form.Log_Text(group, "No values.");
             else
             {
                 using (var stream = new FileStream(
                     $"{path}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
                 {
-                    var bytes = Encoding.UTF8.GetBytes(val);
+                    var bytes = Encoding.UTF8.GetBytes(val.ToString());
                     await stream.WriteAsync(bytes, 0, bytes.Length);
-                    val = "";
+                    val.Clear();
                 }
             }
             reset();
