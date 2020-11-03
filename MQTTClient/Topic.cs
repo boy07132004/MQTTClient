@@ -18,10 +18,11 @@ namespace MQTTClient
         protected decimal time;
         public int run;
         public string path;
-        private StringBuilder val = new StringBuilder("\n");
+        public StringBuilder val = new StringBuilder("\n");
+        private readonly object lockobject = new object();
         //private readonly Form1 form;
         private  Form1 form;
-        public bool Repeat = false;
+        public bool repeat = false;
         public short group;
 
         public Topic(MqttClient client, string topic,decimal time,string run,string path,short group,Form1 form)
@@ -29,16 +30,37 @@ namespace MQTTClient
             this.client = client;
             this.topic = topic;
             this.time = time*1000;
-            this.Repeat = !int.TryParse(run, out this.run);
+            this.repeat = !int.TryParse(run, out this.run);
             this.path = path;
             this.form = form;
             this.group = group;
+
+        }
+        public void Add_String(string s)
+        {
+            lock (this.lockobject)
+            {
+                val.Append(s);
+            }
+        }
+        public string To_String()
+        {
+            lock(this.lockobject){
+                return val.ToString();
+            }
+        }
+        public void Clear()
+        {
+            lock (this.lockobject)
+            {
+                val.Clear();
+            }
         }
         public void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             if (e.Topic != topic) return;
-            val.Append("\n");
-            val.Append(Encoding.UTF8.GetString(e.Message));
+            Add_String("\n");
+            Add_String(Encoding.UTF8.GetString(e.Message));
         }
         public void Subscribe()
         {
@@ -57,14 +79,14 @@ namespace MQTTClient
         public void Save()
         {
             form.Log_Text(group,"Record start ");
-            val.Clear();
+            Clear();
             record();
             form.Button_Visible(group);
         }
 
         public void reset()
         {
-            if (!Repeat)
+            if (!repeat)
             {
                 run--;
                 if (run <= 0)
@@ -111,9 +133,9 @@ namespace MQTTClient
                 using (var stream = new FileStream(
                     $"{path}\\{record_time}.csv", FileMode.Create, FileAccess.Write, FileShare.Write, 4096, useAsync: true))
                 {
-                    var bytes = Encoding.UTF8.GetBytes(val.ToString());
+                    var bytes = Encoding.UTF8.GetBytes(To_String());
                     await stream.WriteAsync(bytes, 0, bytes.Length);
-                    val.Clear();
+                    Clear();
                 }
             }
             reset();

@@ -107,7 +107,7 @@ namespace MQTTClient
         }
         private void Stop_Button_Func(Topic topic_)
         {
-            topic_.Repeat = false;
+            topic_.repeat = false;
             topic_.run = -1;
             Log_Text(topic_.group, $"Force stop ");
             topic_.reset();
