@@ -188,7 +188,7 @@
             this.topic_textBox.Name = "topic_textBox";
             this.topic_textBox.Size = new System.Drawing.Size(227, 27);
             this.topic_textBox.TabIndex = 1;
-            this.topic_textBox.Text = "rand";
+            this.topic_textBox.Text = "vibration";
             // 
             // save_Button
             // 
@@ -208,7 +208,7 @@
             this.broker_textBox.Name = "broker_textBox";
             this.broker_textBox.Size = new System.Drawing.Size(122, 29);
             this.broker_textBox.TabIndex = 5;
-            this.broker_textBox.Text = "192.168.0.100";
+            this.broker_textBox.Text = "localhost";
             // 
             // label1
             // 
